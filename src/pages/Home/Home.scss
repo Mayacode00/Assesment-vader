@@ -1,0 +1,16 @@
+.app__carousel-section {
+  position: relative;
+  margin-bottom: 70px;
+  & > .app__content-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  .app__carousel-title {
+    font-size: 24px;
+    color: white;
+    font-weight: normal;
+    text-transform: capitalize;
+  }
+}

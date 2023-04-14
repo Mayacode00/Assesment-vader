@@ -1,0 +1,55 @@
+import React from "react";
+import { useSelector } from "react-redux";
+import { ContentWrapper, Image } from "../../../components";
+import avatar from "../../../assets/avatar.png";
+import "./Cast.scss";
+
+const Cast = ({ data, loading }) => {
+  const { url } = useSelector((state) => state.home);
+
+  const skeleton = () => {
+    return (
+      <div className="app__cast-section_sk-item">
+        <div className="circle skeleton"></div>
+        <div className="row skeleton"></div>
+        <div className="row2 skeleton"></div>
+      </div>
+    );
+  };
+  return (
+    <div className="app__cast-section">
+      <ContentWrapper>
+        <div className="app__cast-section_heading">top cast</div>
+        {!loading ? (
+          <div className="app__cast-section_list-items">
+            {data?.map((item) => {
+              let imgUrl = item.profile_path
+                ? url.profile + item.profile_path
+                : avatar;
+              return (
+                <div key={item.id} className="app__cast-section_list-item">
+                  <div className="app__cast-section_profile-img">
+                    <Image src={imgUrl} />
+                  </div>
+                  <div className="name">{item.name}</div>
+                  <div className="character">{item.character}</div>
+                </div>
+              );
+            })}
+          </div>
+        ) : (
+          <div className="app__cast-skeleton">
+            {skeleton()}
+            {skeleton()}
+            {skeleton()}
+            {skeleton()}
+            {skeleton()}
+            {skeleton()}
+          </div>
+        )}
+      </ContentWrapper>
+    </div>
+  );
+};
+
+export default Cast;
