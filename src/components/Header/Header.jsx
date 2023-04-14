@@ -93,6 +93,7 @@ const Header = () => {
             </li>
           </ul>
           <div className="app__header_mobile-menu-items">
+            <HiOutlineSearch onClick={openSearch} />
             {mobileMenu ? (
               <VscChromeClose onClick={() => setMobileMenu(false)} />
             ) : (
