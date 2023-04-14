@@ -4,7 +4,7 @@ import { VscChromeClose } from "react-icons/vsc";
 import { useNavigate, useLocation } from "react-router-dom";
 import { HiOutlineSearch } from "react-icons/hi";
 import ContentWrapper from "../ContentWrapper/ContentWrapper";
-import logo from "../../assets/logo.png";
+import logo from "../../assets/Logo.png";
 
 import "./Header.scss";
 
